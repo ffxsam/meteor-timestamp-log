@@ -6,7 +6,8 @@ TimestampLog._log = function () {
   var logFunc = args.splice(0, 1);
 
   args2 = Array.prototype.slice.call(args[0]);
-  args2[0] = '[' + (new Date()).toString() + '] ' + args2[0];
+  args2[0] = '[' + (new Date()).toString() + '] '
+    + (typeof args2[0] === 'object' ? JSON.stringify(args2[0]) : args2[0]);  
   logFunc[0].apply(null, args2);
 };
 

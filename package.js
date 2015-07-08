@@ -1,13 +1,13 @@
 Package.describe({
   name: 'turf:timestamp-log',
-  version: '1.0.0',
+  version: '1.0.1',
   summary: 'Server-side console logging with timestamps',
   git: 'https://github.com/ffxsam/meteor-timestamp-log.git',
 });
 
 Package.onUse(function(api) {
-  api.addFiles('timestamp-log.js');
-  api.export('TimestampLog');
+  api.addFiles('timestamp-log.js', 'server');
+  api.export('TimestampLog', 'server');
 });
 
 //Package.onTest(function(api) {
